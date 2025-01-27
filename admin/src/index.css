@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+select,input,text{
+    border : 1px solid #c2c2c2;
+    outline-color: black;
+    border-radius: 4px;
+}
