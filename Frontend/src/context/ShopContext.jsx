@@ -11,6 +11,7 @@ const ShopContextProvider = (props) => {
     const [search, setSearch] = useState("")
     const [cartItems, setCartItems] = useState({})
     const delivery_fee = 2;
+    const currency = '$';
 
     const [products, setProducts] = useState([])
     const navigate = useNavigate()
@@ -66,20 +67,20 @@ const ShopContextProvider = (props) => {
         let cartData = structuredClone(cartItems);
         cartData[itemId] = quantity;
         setCartItems(cartData);
-
+    
         if (token) {
             try {
-
-                await axios.post(backendUrl + '/api/cart/update', { itemId, quantity }, { headers: { token } })
-
+                await axios.post(backendUrl + '/api/cart/update', { itemId, quantity }, { headers: { token } });
             } catch (error) {
-                console.log(error)
-                toast.error(error.message)
+                console.log(error);
+                toast.error(error.message);
             }
         }
-
     }
 
+
+   
+    
 
     const getCartAmount = () => {
         let totalAmount = 0;
@@ -96,6 +97,8 @@ const ShopContextProvider = (props) => {
         return totalAmount;
     };
 
+
+    
     const getProductsData = async () => {
         try {
             const response = await axios.get(backendUrl + '/api/product/list')
@@ -148,6 +151,7 @@ const ShopContextProvider = (props) => {
         search,
         setSearch,
         setCartItems,
+        currency,
         cartItems,
         addToCartIem,
         getCartCount,
