@@ -19,6 +19,7 @@ function Orders({ token }) {
 
             const response = await axios.post(backendUrl + '/api/order/list', {}, { headers: { token } })
             if (response.data.success) {
+                console.log("Orders data:", response.data.orders);
                 setOrders(response.data.orders.reverse())
             } else {
                 toast.error(response.data.message)
@@ -66,15 +67,51 @@ function Orders({ token }) {
                        
 
                         <div key={index}>
-                            {order.items.map((item, i) => (
-                                <div key={i}> 
-                                      <img className='w-16' src={item.image} />
-                                <p className='py-0.5 ' >
-                                    {item.name} x {item.quantity}
-                                </p>
-                                </div>
-                              
-                            ))}
+                            {order.items.map((item, i) => {
+                                console.log("Item image:", item.image);
+                                
+                                let imageUrl = '';
+                                try {
+                                    if (typeof item.image === 'string') {
+                                        if (item.image.startsWith('[') || item.image.startsWith('{')) {
+                                            const parsedImage = JSON.parse(item.image);
+                                            imageUrl = Array.isArray(parsedImage) ? parsedImage[0] : parsedImage;
+                                        } else {
+                                            imageUrl = item.image.split(',')[0].trim();
+                                        }
+                                    } else if (Array.isArray(item.image)) {
+                                        imageUrl = item.image[0];
+                                    } else {
+                                        imageUrl = item.image;
+                                    }
+                                } catch (error) {
+                                    console.error("Error processing image URL:", error);
+                                    imageUrl = assets.placeholder_image;
+                                }
+
+                                return (
+                                    <div key={i} className="flex items-center gap-2 mb-2"> 
+                                        <img 
+                                            className='w-16 h-16 object-cover rounded-md border border-gray-200' 
+                                            src={imageUrl}
+                                            alt={item.name}
+                                            onError={(e) => {
+                                                console.error("Image failed to load:", imageUrl);
+                                                e.target.onerror = null;
+                                                e.target.src = assets.placeholder_image;
+                                            }}
+                                        />
+                                        <div>
+                                            <p className='py-0.5 font-medium'>
+                                                {item.name} x {item.quantity}
+                                            </p>
+                                            <p className='text-gray-600'>
+                                                {currency} {item.price}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
 
 
                             <p className='mt-3 mb-2 font-medium '>
