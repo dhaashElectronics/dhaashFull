@@ -49,6 +49,11 @@ function Header() {
                 <hr className="w-[65px] bg-gray-700 h-[1.5px] border-none hidden" />
 
             </Link>
+                <a href="http://localhost:5174">
+                <li className="p-2 border rounded-md px-8 border-gray-200 ">admin</li>
+                <hr className="w-[65px] bg-gray-700 h-[1.5px] border-none hidden" />
+                </a>
+
 
         </ul>
 
