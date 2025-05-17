@@ -100,14 +100,15 @@ function Add({token}) {
             <div>
                 <p className="mb-2  ">product category</p>
                 <select onChange={(e)=>SetCategory(e.target.value)} className="w-full px-3 py-2  ">
-                    <option value="iphone">iphone</option>
+                    <option value="Mobiles">Mobiles</option>
                     <option value="Laptop">Laptop</option>
-                    <option value="charger">Charger</option>
-                    <option value="Watches">Watches</option>
-                    <option value="HandGame">HandGame</option>
-                    <option value="Headphone">Headphone</option>
-                    <option value="Print">Print</option>
+                    <option value="Accessories">Accessories</option>
                     <option value="Stationery">Stationery</option>
+                    <option value="Watches">Watches</option>
+                    <option value="Camera and Accessories">Camera and Accessories</option>
+                    <option value="Laptop-Bag">Laptop-Bag</option>
+                    <option value="Gaming-Accessories">Gaming-Accessories</option>
+                    <option value="Car-Accessories">Car-Accessories</option>
                 </select>
             </div>
  

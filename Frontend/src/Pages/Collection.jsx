@@ -96,28 +96,31 @@ function Collection(){
             <p className="mb-3 text-sm font-medium  ">CATEGORIES</p>
             <div className="flex flex-col text-sm gap-2 font-light text-gray-700">
                 <p className="flex gap-2 ">
-                    <input className="w-3 " type="checkbox" value={'iphone'} onChange={toggleCategory} /> Iphone
+                    <input className="w-3 " type="checkbox" value={'Mobiles'} onChange={toggleCategory} /> Mobiles
                 </p>
                 <p className="flex gap-2 ">
                     <input className="w-3 " type="checkbox" value={'Laptop'} onChange={toggleCategory} /> Laptop
                 </p>
                 <p className="flex gap-2 ">
-                    <input className="w-3 " type="checkbox" value={'charger'} onChange={toggleCategory} /> Charger
+                    <input className="w-3 " type="checkbox" value={'Accessories'} onChange={toggleCategory} /> Accessories
                 </p>
                 <p className="flex gap-2 ">
-                    <input className="w-3 " type="checkbox" value={'Keyboard'} onChange={toggleCategory} /> Keyboard
+                    <input className="w-3 " type="checkbox" value={'Stationery'} onChange={toggleCategory} /> Stationery
                 </p>
                 <p className="flex gap-2 ">
                     <input className="w-3 " type="checkbox" value={'Watches'} onChange={toggleCategory} /> Watches
                 </p>
                 <p className="flex gap-2 ">
-                    <input className="w-3 " type="checkbox" value={'Muse'} onChange={toggleCategory} /> Muse
+                    <input className="w-3 " type="checkbox" value={'Camera and Accessories'} onChange={toggleCategory} /> Camera and Accessories
                 </p>
                 <p className="flex gap-2 ">
-                    <input className="w-3 " type="checkbox" value={'Headphone'} onChange={toggleCategory} /> HeadPhone
+                    <input className="w-3 " type="checkbox" value={'Laptop-Bag'} onChange={toggleCategory} /> Laptop-Bag
                 </p>
                 <p className="flex gap-2 ">
-                    <input className="w-3 " type="checkbox" value={'HandGame'} onChange={toggleCategory} /> HandGame
+                    <input className="w-3 " type="checkbox" value={'Gaming-Accessories'} onChange={toggleCategory} /> Gaming-Accessories
+                </p>
+                <p className="flex gap-2 ">
+                    <input className="w-3 " type="checkbox" value={'Car-Accessories'} onChange={toggleCategory} /> Car-Accessories
                 </p>
             </div>
         </div>
