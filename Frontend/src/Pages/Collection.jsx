@@ -75,8 +75,6 @@ function Collection(){
 
     
 
-
-
     return <div>
         <SearchBar />
      <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 border-t  ">
